@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النتيجة</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container text-center mt-5">
+        <h1 class="mb-4">النتيجة</h1>
+        <p id="result" class="lead"></p>
+        <a href="index.html" class="btn btn-primary btn-lg mt-4">العودة إلى البداية</a>
+    </div>
+
+    <script>
+        const answers = sessionStorage.getItem("answers");
+        let resultText;
+
+        switch (answers) {
+            case "1a2a3a":
+                resultText = "مهندس";
+                break;
+            case "1a2b3a":
+                resultText = "عالم";
+                break;
+            case "1b2b3a":
+                resultText = "طبيب";
+                break;
+            case "1b2b3b":
+                resultText = "معلم";
+                break;
+            default:
+                resultText = "لم يتم تحديد نتيجة واضحة. حاول مرة أخرى.";
+        }
+
+        document.getElementById("result").textContent = `مجالك المناسب هو: ${resultText}`;
+    </script>
+</body>
+</html>
